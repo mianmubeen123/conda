@@ -1,6 +1,9 @@
 import React,{useState} from 'react'
 import { useNavigate,Link} from 'react-router-dom'
 import PreLoaing from './PreLoaing';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle,faFacebook,faTwitter,faLinkedin,} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 const Signup = (props) => {
     const navigate = useNavigate();
     const [credential, setCredential] = useState({name:"",email:"",password:""});
@@ -48,15 +51,21 @@ if(result.success){
             <form onSubmit={submit} className="sign-in-form formi">
               <h2 className="title">Sign Up</h2>
               <div className="input-field">
-                <i className="fas fa-user"></i>
+              <i>
+            <FontAwesomeIcon icon={faUser} className="fa-solid "/>
+            </i>
                 <input type="text" className="form-control input" id="name" name='name' onChange={onchange} value={credential.name} aria-describedby="emailHelp"  placeholder='Enter Your Name'required minLength={5}  />
               </div>
               <div className="input-field">
-              <i className="fas fa-envelope"></i>
+                <i>
+            <FontAwesomeIcon icon={faEnvelope} className="fa-solid "/>
+            </i>
                 <input type="email" className="form-control input" id="email" name='email' onChange={onchange} value={credential.email} aria-describedby="emailHelp" placeholder='Enter Your Email'required  />
               </div>
               <div className="input-field">
-                <i className="fas fa-lock"></i>
+              <i>
+            <FontAwesomeIcon icon={faLock} className="fa-solid "/>
+            </i>
                 <input type="password" className="form-control input" name='password' onChange={onchange} value={credential.password} id="password" placeholder='Enter Your Password'required minLength={6}/>
               </div>
               <button type='submit' className="btni  transparent" id="submit" name='submit'>
@@ -65,16 +74,17 @@ if(result.success){
               <p className="social-text">Or Sign up with social platforms</p>
               <div className="social-media">
             <a href="https://www.facebook.com" className="social-icon">
-              <i className="fab fa-facebook-f"></i>
+            <FontAwesomeIcon icon={faFacebook} className="fa-solid fa-facebook"/>
+
             </a>
             <a href="https://www.twitter.com" className="social-icon">
-              <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} className="fa-solid fa-twitter"/>
             </a>
             <a href="https://www.google.com" className="social-icon">
-              <i className="fab fa-google"></i>
+            <FontAwesomeIcon icon={faGoogle} className="fa-solid fa-google"/>
             </a>
             <a href="https://www.linkedin.com" className="social-icon">
-              <i className="fab fa-linkedin-in"></i>
+            <FontAwesomeIcon icon={faLinkedin} className="fa-solid fa-linkedin"/>
             </a>
           </div>
             </form>
