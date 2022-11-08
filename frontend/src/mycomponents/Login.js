@@ -3,6 +3,9 @@ import { Link,useNavigate } from 'react-router-dom'
 import PreLoaing from './PreLoaing';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle,faFacebook,faTwitter,faLinkedin, faBlackTie,} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faUser,faLock } from '@fortawesome/free-solid-svg-icons';
 const Login = () => {
   AOS.init();
     const navigate = useNavigate();
@@ -46,11 +49,15 @@ if(result.success){
         <form onSubmit={submit} className="sign-in-form formi">
           <h2 className="title">Sign in</h2>
           <div className="input-field">
-            <i className="fas fa-user"></i>
+          <i>
+            <FontAwesomeIcon icon={faUser} className="fa-solid "/>
+            </i>
             <input type="email" className="form-control input" id="email" name='email' onChange={onchangel} value={credentialL.email} aria-describedby="emailHelp" placeholder='Enter Your Email' required  />
           </div>
           <div className="input-field">
-            <i className="fas fa-lock"></i>
+          <i>
+            <FontAwesomeIcon icon={faLock} className="fa-solid "/>
+            </i>
             <input type="password" className="form-control input" name='password' onChange={onchangel} value={credentialL.password} id="password" placeholder='Enter Your Password' required/>
           </div>
           <button type='submit' className="btni  transparent" id="submit" name='submit'>
@@ -59,16 +66,17 @@ if(result.success){
           <p className="social-text">Sign-in social platforms</p>
           <div className="social-media">
             <a href="https://www.facebook.com" className="social-icon">
-              <i className="fab fa-facebook-f"></i>
+            <FontAwesomeIcon icon={faFacebook} className="fa-solid fa-facebook"/>
+
             </a>
             <a href="https://www.twitter.com" className="social-icon">
-              <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} className="fa-solid fa-twitter"/>
             </a>
             <a href="https://www.google.com" className="social-icon">
-              <i className="fab fa-google"></i>
+            <FontAwesomeIcon icon={faGoogle} className="fa-solid fa-google"/>
             </a>
             <a href="https://www.linkedin.com" className="social-icon">
-              <i className="fab fa-linkedin-in"></i>
+            <FontAwesomeIcon icon={faLinkedin} className="fa-solid fa-linkedin"/>
             </a>
           </div>
         </form>
@@ -104,3 +112,4 @@ if(result.success){
 }
 
 export default Login
+
